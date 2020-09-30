@@ -1,0 +1,14 @@
+The following are the web/application servers which are the top
+1.	Apache Tomcat.
+2.	Jetty.
+3.	Apache TomEE.
+4.	Apache Geronimo.
+5.	Oracle Weblogic.
+6.	Websphere.
+7.	Wildfly.
+8.	Glassfish.
+9.	Jboss Enterprise Application Platform.
+10.	Apache HTTP server.
+11.	JOnAS.
+12.	Resin Servlet Container.
+13.	Oracle iPlanet Web server.

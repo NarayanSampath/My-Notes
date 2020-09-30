@@ -1,0 +1,50 @@
+===========================================================================================================================================================
+for installing eg manager & agent:
+===========================================================================================================================================================
+	Open Run first.
+
+	Manager Location : \\192.168.10.88\eGpackages(new)\CurrentVersion 7.0.0\Manager\Windows 2012x64
+	Agent Location : \\192.168.10.88\eGpackages(new)\CurrentVersion 7.0.0\Agent\Windows 2012x64
+
+Once manager and agent are uninstalled go to c drive and delete egurkha folder and check in regedit HKEY_LOCAL_MACHINE -> SOFTWARE.
+
+copy to desktop n install manager first, 
+while installing hit no for any question then finish installation, 
+now in eGDatabaseCreation.jsp
+
+Db server Name/IP = 192.168.10.100
+Admin UserName = sa
+Admin password is egurkha123
+given eg db name as narayan_06_09_18 last time.
+db username - narayan
+db password - P@ssw0rd
+then validate then create
+now for license ask deepaks license. \\192.168.8.251\c$\egurkha\bin\license
+then upload license then wait for manager to restart.
+
+copy the btm folder from egurkha\lib and place it somewhere in local and reference it from the tomcat to be monitored
+
+then create a component in egurkha manager and change the OFFLOAD_COMPONENT_ID to name of component id and port of tomcat inside square braces as such [compName:0000]
+
+now, change the LOG_LEVEL to ALL in btmLogging.props in the same btm folder
+
+now enable logs in both manager and agent by running mgrdebugon.bat and agent_output_on.bat in egurkha\lib
+
+finally(optional) go to egurkha\manager\tomcat\conf\web.xml and change development param-name to true which is false by default, checkInterval to 0 and modificationTestInterval to 0.
+
+Now, to report to agent in another machine, 
+	go to eg_tests.ini and change "BindBTMOffloadPortToLocalhostOnly" to false, which is true by default.
+	
+C:\eGurkha\manager\tomcat\conf\web.xml
+
+To enable startup.log go to logback.xml change Log level to All for AGENT_STARTUP_LOGGER
+
+To Make your agent to report to another manager, run changeAgentSettings.bat from egurkha\lib from cmd and follow
+to get catalina run mgroutputon.bat
+
+	
+	
+	
+MANAGER iNSTALALTION DATES
+
+Narayan_mysql_01_06_2020

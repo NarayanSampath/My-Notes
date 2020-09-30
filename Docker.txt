@@ -1,0 +1,39 @@
+
+Docker :
+	docker --version
+	docker --help
+list all running containers
+	docker ps -a 
+remove all stopped containers
+	docker system prune 
+i--interactive t--tty d--detached --removeContainerAfterStop
+	docker run -i -t -d --rm -p dockerPort:appPort imageName
+stop container by id or container name
+	docker stop containerId
+exec into docker container
+	docker exec -it 8344204b91b3 /bin/bash to go into the container --- A container is like a vm has all file structure like os.
+Get Docker Version
+	docker --version
+Get systemwide docker information - displays everything about the current docker engine
+	docker info
+Get all running containers:
+	docker container ls
+Get all containers:
+	docker ps -a
+
+
+Dockerfile
+	FROM openjdk:8
+	add target/demo-0.0.1-SNAPSHOT.jar demo-0.0.1-SNAPSHOT.jar
+	EXPOSE 8085	
+	ENTRYPOINT ["java", "-jar" "demo-0.0.1-SNAPSHOT.jar"]
+
+to Build a docker image
+	docker build -f Dockerfile -t docker-spring-boot .
+
+docker copy file into container:
+	docker cp foo.txt mycontainer:/foo.txt
+Get winscp path of container:
+	docker inspect -f '{{ .GraphDriver.Data.MergedDir }}' d1ee24b830eb
+create container into network
+	docker  run -itd --network=isolated_nw --name=C1_N1 sarjunkumar24391/petclinic 

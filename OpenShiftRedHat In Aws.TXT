@@ -1,0 +1,22 @@
+oc login --token=WtNNif5YHhq6mYQEFiiUHUld2lAIVs0ggHuvzZiPJQ0 --server=https://api.egapm.converged-apm.com:6443
+
+RedHat Documentation - https://docs.openshift.com/container-platform/4.4/installing/installing_aws/installing-aws-default.html
+
+Steps:
+https://www.youtube.com/watch?v=AZvIOmnvNtA
+https://docs.openshift.com/container-platform/4.4/installing/installing_aws/installing-aws-default.html
+
+
+openshift:
+https://console-openshift-console.apps.egapm.converged-apm.com
+Username : kubeadmin
+Password : sfKLM-ffkmk-MRRCR-yvu3z
+
+
+AWS Login Details:
+https://473228168570.signin.aws.amazon.com/console
+User name                     :				eGAPM
+Password                      :				X1^bgdc@qwf3X
+Access key ID                 :				AKIAW4LUYZV5LFUV4ZNX
+Secret access key             :				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
+Region Name 				  :				eu-west-2

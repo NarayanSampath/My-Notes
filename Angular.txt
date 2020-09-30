@@ -1,0 +1,14 @@
+Angular
+Create new workspace and initial Application.
+ng new My-app
+
+To run : 
+ng serve
+
+to reinstall angular cli
+npm uninstall -g angular-cli @angular/cli
+npm install -g angular-cli @angular/cli
+
+
+
+

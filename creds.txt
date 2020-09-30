@@ -1,0 +1,23 @@
+		Creds:
+						192.168.8.145 - N@rayan885788
+ramajayam				192.168.8.96  - egrj
+
+Santosh					192.168.8.176 -mas/santoshkumarsharma	sam
+Devaraj Chidambaram 	192.168.8.221
+Priyanka Santhaseelan	192.168.8.38
+ThamaraiSelvan 			192.168.8.90
+
+						192.168.11.177	-	administrator	-	abc123ABC
+						192.168.11.102	-	administrator	-	abc123ABC
+						192.168.9.142	-	administrator	-	abc123ABC
+						192.168.9.57	-	adminsitrator	-	abc123ABC
+
+						192.168.11.51	-	root			-	egurkha
+						192.168.11.52	-	Root			-	egurkha
+						192.168.11.49	-	Root			-	apmdemo@123
+						192.168.9.65	-	Root			-	egurkha@123
+						
+		 E:\ApmForWisers\jmeter-config 
+		 
+		 hasami@top-mails.net
+		 narayan

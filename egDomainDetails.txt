@@ -1,0 +1,21 @@
+Domain user details:
+-----------------------
+User		: mas\Narayan.S
+Password	: 
+
+Email ID details:
+-----------------------
+User		: Narayan.S@eginnovations.com
+Password	: 
+URL		: login.microsoftonline.com
+
+IT helpdesk portal:
+-----------------------
+URL		: eghelpdesk.eginnovations.com
+User		: Narayan.S
+Password	: 
+
+Backup:
+-----------------------
+
+Location	: \\192.168.10.88\home

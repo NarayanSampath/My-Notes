@@ -1,0 +1,78 @@
+RBAC:
+
+kubectl create namespace testing
+
+user private key
+openssl genrsa -out user.key 2048
+
+certificate signing request:
+openssl req -new -key user.key -out user.csr -subj "/CN=user/O=testing"
+
+signing authority cert and pkey:
+in master:
+cd /etc/kubernetes/pki 
+copy the ca.crt and ca.key
+
+openssl to sign user key
+openssl x509 -req -in user.csr -CA ca.crt -CAkey ca.key -CAcreateserial -out user.crt -days 365
+
+creating kubeconfig file is equivalent to creating a new user, 
+
+now user.crt created
+
+now we are going to create kubeconfig file
+way 1 : 
+send 
+1. ca.crt 
+2. user.crt 
+3. user.key 
+
+kubectl --kubeconfig user.kubeconfig config set-cluster kubernetes --server https://172.42.42.100:6443 --certificate-authority=ca.crt
+
+to find kubernetes server address:
+kubectl config view 
+
+add user to this kubeconfig file 
+kubectl --kubeconfig user.kubeconfig config set-credentials user --client-certificate /fully/qualified/path/user.crt --client-key /fully/qualified/path/user.key
+
+now set context:
+
+kubectl --kubeconfig user.kubeconfig config set-context user-kubernetes --cluster kubernetes --namespace testing --user user
+
+now user.kubeconfig is generated 
+
+change current-context: "" to user-kubernetes
+
+copy user.kubeconfig to ~/.kubeconfig
+
+way 2 : 
+send only kubeconfig file
+
+copy the existing kubeconfig file to user.kubeconfig
+edit user.kubeconfig
+change user to user
+name of context to user-kubernetes
+set namespace to testing under context after user 
+current-context to user-kubernetes
+user name to user
+client-certificate to cat user.crt | base64 -w0
+client-key-data to cat user.key |base64 -w0 
+
+and save the file
+ 
+now the user is created in kubernetes
+Now to create role:
+
+kubectl create role user-testing --verb=get,list --resource=pods --namespace=testing
+To create yaml out of any resource 
+
+kubectl get role user-testing -n testing -o yaml
+
+Now to create role binding:
+
+kubectl create rolebinding user-testing-rolebinding --role=user-testing --user=user --namespace testing
+
+binding to a group:
+kubectl create rolebinding testing-rolebinding --role=user-testing  --group=testing --namespace=testing
+
+=================================================================================================================================
